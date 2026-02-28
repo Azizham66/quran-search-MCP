@@ -52,11 +52,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-username/quran-search-MCP"
+    "url": "https://github.com/Azizham66/quran-search-MCP"
   },
-  "homepage": "https://github.com/your-username/quran-search-MCP#readme",
+  "homepage": "https://github.com/Azizham66/quran-search-MCP#readme",
   "bugs": {
-    "url": "https://github.com/your-username/quran-search-MCP/issues"
+    "url": "https://github.com/Azizham66/quran-search-MCP/issues"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.27.1",

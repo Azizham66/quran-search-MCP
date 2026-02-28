@@ -32,3 +32,8 @@ export { bootstrap };
 export const createServer = async () => {
   return await bootstrap();
 };
+
+// Start server when run directly
+if (import.meta.url === `file://${process.argv[1]}`) {
+  bootstrap();
+}

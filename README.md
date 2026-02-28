@@ -40,7 +40,7 @@ This adaptation layer provides:
 ## Installation
 
 ```bash
-npm install quran-search-engine-mcp-server
+npm install quran-search-mcp
 ```
 
 ## Quick Start
@@ -50,14 +50,99 @@ npm install quran-search-engine-mcp-server
 Start the server:
 
 ```bash
-npm start
+npx quran-search-mcp
 ```
 
 The server will load Quran data once during startup and then listen for MCP requests via stdio.
 
-### Available Tools
+### As Library
 
-#### Search Tool
+Import the MCP server functions:
+
+```typescript
+import { bootstrap, createServer } from 'quran-search-mcp';
+
+// Create and start server programmatically
+const server = await createServer();
+
+// Or use bootstrap directly
+await bootstrap();
+```
+
+---
+
+## Development
+
+### Setup
+
+```bash
+# Clone the repository
+git clone https://github.com/Azizham66/quran-search-MCP.git
+cd quran-search-MCP
+
+# Install dependencies for all packages
+pnpm install
+
+# Build all packages
+pnpm build
+
+# Start development mode
+pnpm dev:mcp
+```
+
+### Project Structure
+
+```
+quran-search-MCP/
+├── packages/
+│   └── quran-search-engine/     # Original search engine 
+├── mcp-server/                  # MCP server adaptation
+│   ├── src/                     # Server source code
+│   │   ├── data/                # Data caching module
+│   │   ├── handlers/            # Search handlers
+│   │   ├── tools/               # MCP tools
+│   │   ├── types/               # Type definitions
+│   │   └── index.ts             # Server entry point
+│   ├── dist/                    # Built server files
+│   ├── package.json              # Server package config
+│   └── tsconfig.json           # TypeScript config
+├── README.md                    # This documentation
+├── CHANGELOG.md                 # Version history
+└── package.json                 # Workspace configuration
+```
+
+### Testing
+
+```bash
+# Run tests for the engine
+pnpm test
+
+# Test the MCP server manually
+echo '{"jsonrpc": "2.0", "method": "tools/list", "params": {}, "id": 1}' | pnpm start
+
+# Test search functionality
+echo '{"jsonrpc": "2.0", "method": "tools/call", "params": {"name": "search", "arguments": {"query": "الرحمن"}}, "id": 2}' | pnpm start
+```
+
+---
+
+## Architecture
+
+The MCP server is built with performance in mind:
+
+- **Data Caching**: Three key datasets are loaded once during server bootstrap:
+  - **Quran Text**: Complete Quranic verses with Uthmani and standard Arabic text
+  - **Morphology Map**: Morphological analysis data for each verse (roots, lemmas, forms)
+  - **Word Map**: Comprehensive word-to-verse mapping for fast lookups
+- **Type Safety**: Full TypeScript support with Zod schema validation
+- **Error Handling**: Comprehensive error handling and logging
+- **Memory Efficient**: Optimized data structures for fast search operations
+
+---
+
+## Available Tools
+
+### Search Tool
 
 Search the Quran for specific text or concepts.
 
@@ -89,53 +174,7 @@ Search the Quran for specific text or concepts.
 }
 ```
 
-## Development
-
-### Setup
-
-```bash
-# Install dependencies for all packages
-pnpm install
-
-# Build all packages
-pnpm build
-
-# Start development mode
-pnpm dev:mcp
-```
-
-### Project Structure
-
-```
-quran-search-MCP/
-├── packages/
-│   └── quran-search-engine/     # Original search engine library
-├── mcp-server/                  # MCP server adaptation
-├── README.md                    # This documentation
-└── package.json                 # Workspace configuration
-```
-
-### Testing
-
-```bash
-# Run tests for the engine
-pnpm test
-
-# Test the MCP server manually
-echo '{"jsonrpc": "2.0", "method": "tools/list", "params": {}, "id": 1}' | pnpm -C mcp-server start
-
-# Test search functionality
-echo '{"jsonrpc": "2.0", "method": "tools/call", "params": {"name": "search", "arguments": {"query": "الرحمن"}}, "id": 2}' | pnpm -C mcp-server start
-```
-
-## Architecture
-
-The MCP server is built with performance in mind:
-
-- **Data Caching**: Quran data, morphology, and word maps are loaded once during server bootstrap
-- **Type Safety**: Full TypeScript support with Zod schema validation
-- **Error Handling**: Comprehensive error handling and logging
-- **Memory Efficient**: Optimized data structures for fast search operations
+---
 
 ## API Reference
 
@@ -159,17 +198,25 @@ Each search result contains:
 - `counts`: Search statistics by match type
 - `pagination`: Pagination information
 
-## License
-
-MIT License - see LICENSE file for details.
+---
 
 ## Contributing
 
-Contributions are welcome! Please read the contributing guidelines and submit pull requests.
+Contributions are welcome! Please read our contributing guidelines and submit pull requests.
 
-## Support
+### Development Workflow
 
-For issues and questions, please use the GitHub issue tracker.
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests if applicable
+5. Submit a pull request
+
+---
+
+## License
+
+MIT License - see LICENSE file for details.
 
 ---
 
@@ -179,13 +226,16 @@ For issues and questions, please use the GitHub issue tracker.
 
 This MCP server is an adaptation layer built upon the excellent [quran-search-engine](https://github.com/adelpro/quran-search-engine) by [Adel Benyahia](https://github.com/adelpro). 
 
-- **Original Author**: Adel Benyahia <contact@adelpro.us.kg>
-- **Original Project**: https://github.com/adelpro/quran-search-engine
-- **Original License**: MIT
+- **Original Engine Author**: Adel Benyahia <contact@adelpro.us.kg>
+- **Original Engine Project**: https://github.com/adelpro/quran-search-engine
+- **Original Engine License**: MIT
 
 ### Adaptation Layer
 
 This MCP server adaptation is also licensed under MIT and maintains compatibility with the original project's licensing terms.
+ - **MCP Server Author**: Aziz Hamdan <azizham66@gmail.com>
+ - **MCP Server Project**: https://github.com/Azizham66/quran-search-MCP
+ - **MCP Server License**: MIT
 
 ### Data Sources
 
@@ -194,3 +244,11 @@ The Quranic data, morphology, and word mappings used by this MCP server are the 
 ---
 
 **Thank you to Adel Benyahia for creating and maintaining the excellent quran-search-engine library that makes this MCP adaptation possible!**
+
+---
+
+## Repository
+
+- **GitHub**: https://github.com/Azizham66/quran-search-MCP
+- **Issues**: https://github.com/Azizham66/quran-search-MCP/issues
+- **npm**: https://www.npmjs.com/package/quran-search-mcp
