@@ -86,6 +86,7 @@ class QuranSearchApp {
         page: 1,
         limit: 20,
       });
+      console.log(response);
 
       this.renderResults(response);
     } catch (error) {
