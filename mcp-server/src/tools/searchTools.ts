@@ -1,6 +1,6 @@
 import { searchHandler } from '../handlers/handlers.js';
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
-import { loadMorphology, loadWordMap, loadQuranData } from 'quran-search-engine';
+import { getDataCache } from '../data/dataCache.js';
 import { z } from 'zod';
 import type { SearchSchemaType, AdvancedSearchOptions, PaginationOptions } from '../types/index.js';
 
@@ -25,12 +25,8 @@ export const registerSearchTools = (server: McpServer) => {
     },
     async ({ query, options }: SearchSchemaType) => {
       try {
-        // Load required data
-        const [quranData, morphologyMap, wordMap] = await Promise.all([
-          loadQuranData(),
-          loadMorphology(),
-          loadWordMap(),
-        ]);
+        // Get data from cache (loaded once during bootstrap)
+        const { quranData, morphologyMap, wordMap } = getDataCache();
 
         // Convert MCP options to internal format
         let searchOptions: AdvancedSearchOptions | undefined;
