@@ -94,24 +94,38 @@ Search the Quran for specific text or concepts.
 ### Setup
 
 ```bash
-# Install dependencies
+# Install dependencies for all packages
 pnpm install
 
-# Build the project
+# Build all packages
 pnpm build
 
-# Start in development mode
-pnpm dev
+# Start development mode
+pnpm dev:mcp
+```
+
+### Project Structure
+
+```
+quran-search-MCP/
+├── packages/
+│   └── quran-search-engine/     # Original search engine library
+├── mcp-server/                  # MCP server adaptation
+├── README.md                    # This documentation
+└── package.json                 # Workspace configuration
 ```
 
 ### Testing
 
 ```bash
-# Run tests
+# Run tests for the engine
 pnpm test
 
-# Test the server manually
-echo '{"jsonrpc": "2.0", "method": "tools/list", "params": {}, "id": 1}' | pnpm start
+# Test the MCP server manually
+echo '{"jsonrpc": "2.0", "method": "tools/list", "params": {}, "id": 1}' | pnpm -C mcp-server start
+
+# Test search functionality
+echo '{"jsonrpc": "2.0", "method": "tools/call", "params": {"name": "search", "arguments": {"query": "الرحمن"}}, "id": 2}' | pnpm -C mcp-server start
 ```
 
 ## Architecture
