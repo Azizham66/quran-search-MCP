@@ -42,3 +42,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Type compatibility issues with MCP SDK
 - Import path resolution in workspace
 - Build configuration for monorepo
+
+## [0.1.1] - 2026-02-28
+
+### Added
+- Repository URL format in package.json
+
+### Changed
+- Updated repository URL format to use git+https protocol
+
+### Fixed
+- Repository URL format in package.json
+- Other minor fixes in documentation and configuration
