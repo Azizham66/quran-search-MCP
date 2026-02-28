@@ -2,13 +2,13 @@
 
 ## Supported Versions
 
-Only the latest version of `quran-search-engine-mcp-server` is supported for security updates.
+Only the latest version of `quran-search-mcp` is supported for security updates.
 
 ## Reporting a Vulnerability
 
 We take security seriously. If you discover a vulnerability, please do NOT open a public issue. Instead, report it privately:
 
-**Email**: [your-security-email@example.com]
+**Email**: [azizhz2006@gmail.com]
 
 Please include as much detail as possible:
 
