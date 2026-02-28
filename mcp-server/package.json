@@ -1,7 +1,7 @@
 {
   "name": "quran-search-engine-mcp-server",
   "version": "0.1.0",
-  "description": "MCP server for Quran Search Engine",
+  "description": "MCP server adaptation for Quran Search Engine by Adel Benyahia",
   "main": "./dist/index.js",
   "type": "module",
   "scripts": {

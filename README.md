@@ -1,12 +1,33 @@
 # Quran Search Engine MCP Server
 
-A Model Context Protocol (MCP) server that provides Quran search capabilities to AI assistants and MCP-compatible clients.
+> **⚠️ Important Notice**: This is an **adaptation layer** that provides MCP (Model Context Protocol) server functionality for the original [quran-search-engine](https://github.com/adelpro/quran-search-engine) by [Adel Benyahia](https://github.com/adelpro). If you're looking for the core search engine library, documentation, or want to use the search functionality directly in your applications, please visit the original project.
 
 ## Overview
 
-This MCP server exposes the powerful Quran Search Engine as a tool that can be used by AI assistants for searching Quranic text, verses, and related content. It supports multiple search modes including exact matching, fuzzy search, and morphological analysis.
+This MCP server exposes the powerful Quran Search Engine as a tool that can be used by AI assistants and MCP-compatible clients. It acts as a bridge between the original search engine and MCP-compatible AI systems.
 
-## Features
+## Credit & Attribution
+
+**Original Project**: [quran-search-engine](https://github.com/adelpro/quran-search-engine) by [Adel Benyahia](https://github.com/adelpro)
+
+This MCP server is built on top of and depends entirely on the original Quran Search Engine. All search functionality, Arabic text processing, morphological analysis, and data structures are provided by the original library.
+
+### For Original Library Documentation
+
+If you need:
+- **Core API documentation**
+- **Search algorithm details** 
+- **Direct library usage examples**
+- **Performance benchmarks**
+- **Data source information**
+
+👉 **Visit**: [https://github.com/adelpro/quran-search-engine](https://github.com/adelpro/quran-search-engine)
+
+---
+
+## MCP Server Features
+
+This adaptation layer provides:
 
 - **Exact Search**: Find exact matches of Arabic text
 - **Fuzzy Search**: Find similar words and phrases
@@ -135,3 +156,27 @@ Contributions are welcome! Please read the contributing guidelines and submit pu
 ## Support
 
 For issues and questions, please use the GitHub issue tracker.
+
+---
+
+## Acknowledgments & License
+
+### Original Project Credit
+
+This MCP server is an adaptation layer built upon the excellent [quran-search-engine](https://github.com/adelpro/quran-search-engine) by [Adel Benyahia](https://github.com/adelpro). 
+
+- **Original Author**: Adel Benyahia <contact@adelpro.us.kg>
+- **Original Project**: https://github.com/adelpro/quran-search-engine
+- **Original License**: MIT
+
+### Adaptation Layer
+
+This MCP server adaptation is also licensed under MIT and maintains compatibility with the original project's licensing terms.
+
+### Data Sources
+
+The Quranic data, morphology, and word mappings used by this MCP server are the same as those provided by the original quran-search-engine project, sourced from the Quranic Arabic Corpus v4.0.
+
+---
+
+**Thank you to Adel Benyahia for creating and maintaining the excellent quran-search-engine library that makes this MCP adaptation possible!**
