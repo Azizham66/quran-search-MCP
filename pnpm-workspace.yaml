@@ -1,6 +1,7 @@
 packages:
   - '.'
   - 'examples/*'
+  - 'mcp-server'
 
 onlyBuiltDependencies:
   - esbuild
