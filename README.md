@@ -1,5 +1,13 @@
 # Quran Search Engine MCP Server
 
+![npm version](https://img.shields.io/npm/v/quran-search-mcp)
+![npm downloads](https://img.shields.io/npm/dt/quran-search-mcp)
+![GitHub License](https://img.shields.io/github/license/Azizham66/quran-search-MCP)
+![GitHub stars](https://img.shields.io/github/stars/Azizham66/quran-search-MCP?style=social)
+![GitHub forks](https://img.shields.io/github/forks/Azizham66/quran-search-MCP?style=social)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-blue)
+![Node.js](https://img.shields.io/badge/Node.js-18+-green)
+
 > **⚠️ Important Notice**: This is an **adaptation layer** that provides MCP (Model Context Protocol) server functionality for the original [quran-search-engine](https://github.com/adelpro/quran-search-engine) by [Adel Benyahia](https://github.com/adelpro). If you're looking for the core search engine library, documentation, or want to use the search functionality directly in your applications, please visit the original project.
 
 ## Overview
