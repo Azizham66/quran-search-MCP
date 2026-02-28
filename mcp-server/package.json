@@ -1,5 +1,5 @@
 {
-  "name": "quran-search-engine-mcp-server",
+  "name": "quran-search-mcp",
   "version": "0.1.0",
   "description": "MCP server adaptation for Quran Search Engine by Adel Benyahia",
   "main": "./dist/index.js",
