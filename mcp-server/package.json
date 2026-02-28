@@ -3,6 +3,18 @@
   "version": "0.1.0",
   "description": "MCP server adaptation for Quran Search Engine by Adel Benyahia",
   "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
   "type": "module",
   "scripts": {
     "build": "tsc",
@@ -19,6 +31,14 @@
   ],
   "author": "Abdulaziz Hamzah",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/quran-search-MCP"
+  },
+  "homepage": "https://github.com/your-username/quran-search-MCP#readme",
+  "bugs": {
+    "url": "https://github.com/your-username/quran-search-MCP/issues"
+  },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.27.1",
     "quran-search-engine": "workspace:*",

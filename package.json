@@ -1,35 +1,79 @@
 {
   "name": "quran-search-mcp",
   "version": "0.1.0",
-  "description": "Quran Search Engine MCP Server - Monorepo",
-  "private": true,
-  "scripts": {
-    "build": "pnpm -C mcp-server build",
-    "lint": "pnpm -C packages/quran-search-engine lint",
-    "lint:fix": "pnpm -C packages/quran-search-engine lint:fix",
-    "dev": "pnpm -C mcp-server dev",
-    "start": "pnpm -C mcp-server start",
-    "prepare": "husky"
+  "description": "Quran Search Engine MCP Server - Complete package with engine and server",
+  "main": "./mcp-server/dist/index.js",
+  "module": "./mcp-server/dist/index.js",
+  "types": "./mcp-server/dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./mcp-server/dist/index.d.ts",
+      "import": "./mcp-server/dist/index.js",
+      "require": "./mcp-server/dist/index.js"
+    },
+    "./engine": {
+      "types": "./packages/quran-search-engine/dist/index.d.ts",
+      "import": "./packages/quran-search-engine/dist/index.mjs",
+      "require": "./packages/quran-search-engine/dist/index.js"
+    }
   },
-  "author": "Abdulaziz Hamzah",
-  "license": "MIT",
   "files": [
-    "dist",
+    "mcp-server/dist",
+    "packages/quran-search-engine/dist",
     "CHANGELOG.md"
   ],
+  "bin": {
+    "quran-search-mcp": "./mcp-server/dist/index.js"
+  },
+  "scripts": {
+    "build": "pnpm -C packages/quran-search-engine build && pnpm -C mcp-server build",
+    "build:engine": "pnpm -C packages/quran-search-engine build",
+    "build:mcp": "pnpm -C mcp-server build",
+    "test": "pnpm -C packages/quran-search-engine test",
+    "lint": "pnpm -C packages/quran-search-engine lint",
+    "lint:fix": "pnpm -C packages/quran-search-engine lint:fix",
+    "dev:engine": "pnpm -C packages/quran-search-engine dev",
+    "dev:mcp": "pnpm -C mcp-server dev",
+    "start": "pnpm -C mcp-server start",
+    "prepare": "husky",
+    "prepublishOnly": "pnpm run build"
+  },
   "keywords": [
     "quran",
     "search",
     "islam",
-    "morphology"
+    "morphology",
+    "mcp",
+    "server",
+    "ai",
+    "arabic"
   ],
+  "author": "Abdulaziz Hamzah",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/quran-search-MCP"
+  },
+  "homepage": "https://github.com/your-username/quran-search-MCP#readme",
+  "bugs": {
+    "url": "https://github.com/your-username/quran-search-MCP/issues"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.27.1",
+    "zod": "^4.3.6",
+    "fuse.js": "^7.0.0"
+  },
   "devDependencies": {
     "husky": "^9.0.11",
     "lint-staged": "^15.2.2",
     "@commitlint/cli": "^19.0.3",
     "@commitlint/config-conventional": "^19.0.3",
     "commitizen": "^4.3.0",
-    "cz-conventional-changelog": "^3.3.0"
+    "cz-conventional-changelog": "^3.3.0",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0",
+    "vitest": "^1.0.0",
+    "tsup": "^8.0.0"
   },
   "config": {
     "commitizen": {

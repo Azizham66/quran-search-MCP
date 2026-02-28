@@ -16,10 +16,19 @@ async function bootstrap() {
     registerSearchTools(server);
     const transport = new StdioServerTransport();
     await server.connect(transport);
+
+    // Export server instance for external usage
+    return server;
   } catch (error) {
     console.error('Failed to bootstrap server:', error);
     process.exit(1);
   }
 }
 
-bootstrap();
+// Export for direct usage
+export { bootstrap };
+
+// Also export a factory function for creating server
+export const createServer = async () => {
+  return await bootstrap();
+};
