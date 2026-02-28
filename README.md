@@ -40,7 +40,7 @@ This adaptation layer provides:
 ## Installation
 
 ```bash
-npm install quran-search-engine-mcp-server
+npm install quran-search-engine-mcp
 ```
 
 ## Quick Start
