@@ -34,6 +34,14 @@ export const createServer = async () => {
 };
 
 // Start server when run directly
-if (import.meta.url === `file://${process.argv[1]}`) {
-  bootstrap();
+if (process.argv[1].endsWith('index.js')) {
+  console.log('🚀 Starting MCP server...');
+  bootstrap()
+    .then(() => {
+      console.log('✅ MCP server started successfully');
+    })
+    .catch((error) => {
+      console.error('❌ Server startup failed:', error);
+      process.exit(1);
+    });
 }

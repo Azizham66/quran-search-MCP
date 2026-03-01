@@ -43,6 +43,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Import path resolution in workspace
 - Build configuration for monorepo
 
+## [0.1.2] - 2026-02-28
+
+### Fixed
+- MCP server direct execution detection
+- Server startup and JSON-RPC communication
+- Data loading and search functionality
+- Console logging for better debugging
+
+### Changed
+- Simplified server startup logic
+- Improved error handling
+- Enhanced development experience
+
+---
+
 ## [0.1.1] - 2026-02-28
 
 ### Added
