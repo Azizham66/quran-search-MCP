@@ -1,6 +1,6 @@
 {
   "name": "quran-search-mcp",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Quran Search Engine MCP Server - Complete package with engine and server",
   "main": "./mcp-server/dist/index.js",
   "module": "./mcp-server/dist/index.js",

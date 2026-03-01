@@ -7,23 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Added
-- Initial monorepo structure
-- MCP server adaptation layer
-- Workspace configuration with pnpm
-- Separated engine package to `packages/quran-search-engine`
-- Shared linting and formatting configurations
-- Updated documentation for monorepo setup
+### Fixed
+- Removed console.log statements that were breaking JSON output for MCP agents
+- Cleaned up server startup code to ensure raw JSON response
 
 ### Changed
-- Restructured project from single package to monorepo
-- Moved engine-specific files to packages directory
-- Updated package.json to workspace configuration
+- Simplified searchHandler implementation for better maintainability
+- Improved code formatting and structure
+
+## [0.1.3] - 2026-03-02
 
 ### Fixed
-- Resolved import paths for MCP server
-- Fixed workspace dependency resolution
-- Ensured both packages build correctly
+- **Critical**: Removed console.log statements that were corrupting JSON output for MCP agents
+- Cleaned up server startup to ensure raw JSON responses
+- Simplified handler implementation
 
 ## [0.1.0] - 2026-02-28
 
