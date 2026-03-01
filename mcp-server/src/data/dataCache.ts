@@ -27,7 +27,6 @@ export const loadDataCache = async (): Promise<DataCache> => {
       wordMap,
     };
 
-    console.log('Quran search data loaded successfully');
     return dataCache;
   } catch (error) {
     console.error('Failed to load data cache:', error);

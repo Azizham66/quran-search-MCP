@@ -58,7 +58,6 @@ export const registerSearchTools = (server: McpServer) => {
           options: searchOptions,
           pagination,
         });
-
         return {
           content: [
             {

@@ -16,7 +16,7 @@ export const searchHandler = <TVerse extends VerseInput>(params: {
   options?: AdvancedSearchOptions;
   pagination?: PaginationOptions;
 }): SearchResponse<TVerse> => {
-  return search(
+  const result = search(
     params.query,
     params.quranData,
     params.morphologyMap,
@@ -24,4 +24,5 @@ export const searchHandler = <TVerse extends VerseInput>(params: {
     params.options,
     params.pagination,
   );
+  return result;
 };
