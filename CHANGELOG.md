@@ -22,6 +22,31 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Cleaned up server startup to ensure raw JSON responses
 - Simplified handler implementation
 
+## [0.1.2] - 2026-02-28
+
+### Fixed
+- MCP server direct execution detection
+- Server startup and JSON-RPC communication
+- Data loading and search functionality
+- Console logging for better debugging
+
+### Changed
+- Simplified server startup logic
+- Improved error handling
+- Enhanced development experience
+
+## [0.1.1] - 2026-02-28
+
+### Added
+- Repository URL format in package.json
+
+### Changed
+- Updated repository URL format to use git+https protocol
+
+### Fixed
+- Repository URL format in package.json
+- Other minor fixes in documentation and configuration
+
 ## [0.1.0] - 2026-02-28
 
 ### Added
@@ -39,30 +64,3 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Type compatibility issues with MCP SDK
 - Import path resolution in workspace
 - Build configuration for monorepo
-
-## [0.1.2] - 2026-02-28
-
-### Fixed
-- MCP server direct execution detection
-- Server startup and JSON-RPC communication
-- Data loading and search functionality
-- Console logging for better debugging
-
-### Changed
-- Simplified server startup logic
-- Improved error handling
-- Enhanced development experience
-
----
-
-## [0.1.1] - 2026-02-28
-
-### Added
-- Repository URL format in package.json
-
-### Changed
-- Updated repository URL format to use git+https protocol
-
-### Fixed
-- Repository URL format in package.json
-- Other minor fixes in documentation and configuration
